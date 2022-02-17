@@ -26,11 +26,6 @@ function Home() {
     fetchRaces()
   }, [])
 
-  // console.log('1 this is races', races)
-  // console.log('2 this is classes', classes)
-
-
-
   function generateCharacter() {
   console.log('3' , races.results)
   console.log('4', classes.results)
@@ -45,9 +40,6 @@ function Home() {
   console.log('6 this is a character', randomRace)
   console.log(`this is a character with race ${randomRace.name} and class ${randomClass.name}`)
     
-
-
-
 
   }
   return (
@@ -71,6 +63,7 @@ function Home() {
       <h3>Click below to Generate a character</h3>
       <div className="button-container">
         <button onClick={generateCharacter}><img className="dice" src={diceImg} /></button>
+        <p>'this is a character with race '{randomRace.name}'and class' {randomClass.name}</p>
       </div>
       
     </>
