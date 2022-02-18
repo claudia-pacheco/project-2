@@ -7,6 +7,8 @@ function Home() {
   const [races, updateRaces] = React.useState(undefined)
   const [skills, updateSkills] = React.useState(undefined)
 
+  let [name, updateName] = React.useState('')
+
   let [randomClass, updateRandomClass] = React.useState(undefined)
   let [randomRace, updateRandomRace] = React.useState(undefined)
   let [randomSkill, updateRandomSkill] = React.useState(undefined)
@@ -111,6 +113,16 @@ function Home() {
     skillDisplay = !skillDisplay
     updateSkillDisplay(skillDisplay)
   }
+  //handle input name
+  function handleChange(e) {
+    name = e.target.value
+    updateName(e.target.value)
+  }
+  function addName(event) {
+    event.preventDefault()
+    console.log('clicked!', name)
+    updateName(name)
+  }
 
   return (
     <>
@@ -135,6 +147,16 @@ function Home() {
           Happy playing!
         </p>
       </div>
+
+      <form onSubmit={addName}>
+        <label>
+          Enter player's name:
+          <input type='text' name='name' onChange={handleChange} value={name} />
+        </label>
+        <input type='submit' />
+      </form>
+
+
       <h3>Click below to Generate a character</h3>
       <div className='button-container'>
         <button onClick={generateCharacter}>
@@ -142,7 +164,8 @@ function Home() {
         </button>
       </div>
       {/* CHARACTER INFORMATION */}
-      {randomRace && <div><p>You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
+      {randomClass && <div><p><li>{name}</li> <br />
+        You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
         the skills <b>{randomSkill.name}</b>.</p>
         <button onClick={hitDieDisplay}>Click to know more about your class</button>
         <button onClick={raceInfoDisplay}>Click to know more about your race</button>
@@ -172,19 +195,13 @@ function Home() {
         <b>Speed:</b> {raceInfo.speed}
       </p>}
       {/* SKILLS INFORMATION */}
-      {skillDisplay && <p><h3>MOre about the {randomSkill.name} skill</h3>
+      {skillDisplay && <p><h3>More about the {randomSkill.name} skill</h3>
         <br />
         <b>{randomSkill.name}: </b>{skillInfo.desc[0]}</p>}
 
 
 
-      <form>
-        <label>
-          Enter player's name:
-          <input type='text' name='name' />
-        </label>
-        <input type='submit' value='Submit' />
-      </form>
+
       {/* <button onClick={addToFaves}>Add Character to Favorites</button> */}
 
       {/* {function addToFaves() {
