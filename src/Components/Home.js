@@ -7,6 +7,8 @@ function Home() {
   const [races, updateRaces] = React.useState(undefined)
   const [skills, updateSkills] = React.useState(undefined)
 
+  let [name, updateName] = React.useState('')
+
   let [randomClass, updateRandomClass] = React.useState(undefined)
   let [randomRace, updateRandomRace] = React.useState(undefined)
   let [randomSkill, updateRandomSkill] = React.useState(undefined)
@@ -110,6 +112,16 @@ function Home() {
     skillDisplay = !skillDisplay
     updateSkillDisplay(skillDisplay)
   }
+  //handle input name
+  function handleChange(e) {
+    name = e.target.value
+    updateName(e.target.value)
+  }
+  function addName(event) {
+    event.preventDefault()
+    console.log('clicked!', name)
+    updateName(name)
+  }
 
 
   return (
@@ -147,6 +159,20 @@ function Home() {
           Happy playing!
         </p>
       </div>
+<<<<<<< HEAD
+=======
+
+      <form onSubmit={addName}>
+        <label>
+          Enter player's name:
+          <input type='text' name='name' onChange={handleChange} value={name} />
+        </label>
+        <input type='submit' />
+      </form>
+
+
+      <h3>Click below to Generate a character</h3>
+>>>>>>> 630daf5c467afc87b2dfd791a32e8fe779c28f5d
       <div className='button-container'>
         <div className='button-border'>
           <h3>Click below to Generate a character</h3>
@@ -158,7 +184,12 @@ function Home() {
         </div>
       </div>
       {/* CHARACTER INFORMATION */}
+<<<<<<< HEAD
       {randomRace && <div><p className='user-result'>You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
+=======
+      {randomClass && <div><p><li>{name}</li> <br />
+        You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
+>>>>>>> 630daf5c467afc87b2dfd791a32e8fe779c28f5d
         the skills <b>{randomSkill.name}</b>.</p>
       <div className='info-container'>
         <button className="info" onClick={hitDieDisplay}>Expand class</button>
@@ -195,13 +226,7 @@ function Home() {
 
 
 
-      <form>
-        <label>
-          Enter player's name:
-          <input type='text' name='name' />
-        </label>
-        <input type='submit' value='Submit' />
-      </form>
+
       {/* <button onClick={addToFaves}>Add Character to Favorites</button> */}
 
       {/* {function addToFaves() {
