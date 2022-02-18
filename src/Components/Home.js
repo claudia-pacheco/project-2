@@ -12,22 +12,26 @@ function Home() {
   let [randomSkill, updateRandomSkill] = React.useState(undefined)
   let [classInfo, updateClassInfo] = React.useState(undefined)
   let [renderClassInfo, updateRenderClassInfo] = React.useState([])
+  let [hitDie, updateHitDie] = React.useState(undefined)
 
   // let [userFav, updateUserFav] = React.useState()
 
   React.useEffect(() => {
+    //fetching classes 
     async function fetchClasses() {
       const resp = await fetch('https://www.dnd5eapi.co/api/classes')
       const classes = await resp.json()
       updateClasses(classes)
       generateCharacter(classes)
     }
+    //fetching races
     async function fetchRaces() {
       const respTwo = await fetch('https://www.dnd5eapi.co/api/races')
       const races = await respTwo.json()
       updateRaces(races)
       generateCharacter(races)
     }
+    //fetching skills
     async function fetchSkills() {
       const respThree = await fetch('https://www.dnd5eapi.co/api/skills')
       const skills = await respThree.json()
@@ -38,27 +42,16 @@ function Home() {
     fetchRaces()
     fetchSkills()
   }, [])
+  //fetching individual class information
   async function fetchClassInfo(randomClass) {
     const respFour = await fetch(`https://www.dnd5eapi.co/api/classes/${randomClass.index}`)
     const classInfo = await respFour.json()
     updateClassInfo(classInfo)
-    renderClassInfoFunction(classInfo)
+    displayClassInfoFunction(classInfo)
+    hitDieDisplay(classInfo)
   }
-  function renderClassInfoFunction(classInfo){
-    if (classInfo.starting_equipment.length !=0 ) {
-      renderClassInfo = classInfo.starting_equipment.map(elem => (
-      <li key={elem.equipment}>
-        {elem.equipment.name}
-      </li>))
-    updateRenderClassInfo(renderClassInfo)
-  }
-  else {
-    renderClassInfo = <li>There is no starting equipment for this class.</li>
-    updateRenderClassInfo(renderClassInfo)
-  }
-}
 
-
+  //GENERATING A RANDOM CHARACTER WITH RANDOM CLASS, RACE & SKILL
   function generateCharacter() {
     randomClass = classes.results[Math.floor(Math.random() * classes.results.length)]
     fetchClassInfo(randomClass)
@@ -69,14 +62,29 @@ function Home() {
 
     randomSkill = skills.results[Math.floor(Math.random() * skills.results.length)]
     updateRandomSkill(randomSkill)
-
-    // console.log( `this is a character with race ${randomRace.name} class ${randomClass.name} and skill ${randomSkill.name}`)
   }
-  // console.log('this is the equipment used by ', classInfo.name, renderClassInfo)
-  // console.log('this is the random class', randomClass.name)
-  console.log('this is class infooo', classInfo)
-  // console.log('this is the class info of the random class', classInfo.starting_equipment.map(elem => {console.log(elem.equipment.name)}) )
-  // console.log('5 this is a character random class', randomClass)
+
+  //DISPLAYING THE STARTING EQUIPMENT AND HIT DIE OF A CHARACTER 
+  function displayClassInfoFunction(classInfo) {
+    if (classInfo.starting_equipment.length != 0) {
+      renderClassInfo = classInfo.starting_equipment.map(elem => (
+        <li key={elem.equipment}>
+          {elem.equipment.name}
+        </li>))
+      updateRenderClassInfo(renderClassInfo)
+    }
+    else {
+      renderClassInfo = <li>There is no starting equipment for this class.</li>
+      updateRenderClassInfo(renderClassInfo)
+    }
+    hitDie = classInfo.hit_die
+  }
+  //TOGGLE CLASS DISPLAY BUTTON
+  function hitDieDisplay() {
+    hitDie = !hitDie
+    updateHitDie(hitDie)
+  }
+
   // console.log('6 this is a character random race', randomRace)
   // console.log('this is a character random skill', randomSkill)
   return (
@@ -109,8 +117,20 @@ function Home() {
         </button>
       </div>
 
-      {randomRace && <div><p>You've been given the race {randomRace.name} with the class of {randomClass.name} and the skills {randomSkill.name} .
-       <br /> Starting equipment: <ol>{renderClassInfo}</ol></p> </div>}
+      {randomRace && <div><p>You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
+        the skills <b>{randomSkill.name}</b>.</p>
+        <button onClick={hitDieDisplay}>Click to know more about your class</button>
+        <button>Click to know more about your race</button></div>}
+
+      {hitDie && <p><h3>More about the {randomClass.name} class.</h3>
+        <br />
+        Your class has the following starting equipment: <ol>{renderClassInfo}</ol>
+        <br />
+        {randomClass.name} has a {classInfo.hit_die} hit die level.
+        <br />
+        <p>Hit die refers to the number of dice rolled to calculate how many hit points a character begins to play with.
+          This determines how difficult they are to kill.</p>
+      </p>}
 
       <form>
         <label>
