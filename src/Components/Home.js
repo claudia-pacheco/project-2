@@ -202,14 +202,7 @@ function Home() {
 
 
 
-      {/* <button onClick={addToFaves}>Add Character to Favorites</button> */}
-
-      {/* {function addToFaves() {
-        let userResult = userResult // store all of the data returned from the random generator into a variable, including the string and expanders, that variable which has all the data returned will be the 'user favorite'
-        // once that has been stored, it can be displayed in the favorites component until the user removes it as a favorite . could pos
-        let userFavorite = 
-        
-      }} */}
+      <button>Add Character to Favorites</button>
     </>
   )
 }
