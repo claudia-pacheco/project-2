@@ -159,8 +159,6 @@ function Home() {
           Happy playing!
         </p>
       </div>
-<<<<<<< HEAD
-=======
 
       <form onSubmit={addName}>
         <label>
@@ -170,9 +168,6 @@ function Home() {
         <input type='submit' />
       </form>
 
-
-      <h3>Click below to Generate a character</h3>
->>>>>>> 630daf5c467afc87b2dfd791a32e8fe779c28f5d
       <div className='button-container'>
         <div className='button-border'>
           <h3>Click below to Generate a character</h3>
@@ -184,12 +179,8 @@ function Home() {
         </div>
       </div>
       {/* CHARACTER INFORMATION */}
-<<<<<<< HEAD
-      {randomRace && <div><p className='user-result'>You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
-=======
-      {randomClass && <div><p><li>{name}</li> <br />
+      {randomClass && <div><p className='user-result'><li>{name}</li> <br />
         You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
->>>>>>> 630daf5c467afc87b2dfd791a32e8fe779c28f5d
         the skills <b>{randomSkill.name}</b>.</p>
       <div className='info-container'>
         <button className="info" onClick={hitDieDisplay}>Expand class</button>
