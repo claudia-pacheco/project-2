@@ -93,8 +93,7 @@ function Home() {
           {elem.equipment.name}
         </li>))
       updateRenderClassInfo(renderClassInfo)
-    }
-    else {
+    } else {
       renderClassInfo = <li>There is no starting equipment for this class.</li>
       updateRenderClassInfo(renderClassInfo)
     }
@@ -124,6 +123,7 @@ function Home() {
     updateName(name)
   }
 
+
   return (
     <>
       <div className='headings'>
@@ -145,8 +145,22 @@ function Home() {
           add up to four favorites. One for each player.
           <br />
           Happy playing!
+          Welcome to the D&amp;D Character Builder! <br /> The purpose of this
+          project is to help players pick a character using a randomization
+          tool. <br />
+          Saving players time and possibly making the campaign more interesting.
+          <br />
+          Click the button below to generate a random class, race and skill set.{' '}
+          <br />
+          You can generate as many times as you like. <br />
+          Once satisfied, you can attach your name to your chosen character, and
+          add up to four favorites. One for each player.
+          <br />
+          Happy playing!
         </p>
       </div>
+<<<<<<< HEAD
+=======
 
       <form onSubmit={addName}>
         <label>
@@ -158,18 +172,29 @@ function Home() {
 
 
       <h3>Click below to Generate a character</h3>
+>>>>>>> 630daf5c467afc87b2dfd791a32e8fe779c28f5d
       <div className='button-container'>
-        <button onClick={generateCharacter}>
-          <img className='dice' src={diceImg} />
-        </button>
+        <div className='button-border'>
+          <h3>Click below to Generate a character</h3>
+          <div className="button-1-container">
+            <button className="button-1" onClick={generateCharacter}>
+              <img className='dice' src={diceImg} />
+            </button>
+          </div>
+        </div>
       </div>
       {/* CHARACTER INFORMATION */}
+<<<<<<< HEAD
+      {randomRace && <div><p className='user-result'>You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
+=======
       {randomClass && <div><p><li>{name}</li> <br />
         You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
+>>>>>>> 630daf5c467afc87b2dfd791a32e8fe779c28f5d
         the skills <b>{randomSkill.name}</b>.</p>
-        <button onClick={hitDieDisplay}>Click to know more about your class</button>
-        <button onClick={raceInfoDisplay}>Click to know more about your race</button>
-        <button onClick={skillInfoDisplay}>Click to know more about your skill</button></div>}
+      <div className='info-container'>
+        <button className="info" onClick={hitDieDisplay}>Expand class</button>
+        <button className="info" onClick={raceInfoDisplay}>Expand race</button>
+        <button className="info" onClick={skillInfoDisplay}>Expand skills</button></div></div>}
 
       {/* CLASSES INFORMATION */}
       {hitDie && <p><h3>More about the {randomClass.name} class.</h3>
