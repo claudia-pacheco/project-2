@@ -4,7 +4,7 @@ import About from './Components/About'
 import Favorites from './Components/Favorites'
 import Nav from './Components/Nav'
 
-const [favourites, updateFavourites] = React.useState([])
+// const [favourites, updateFavourites] = React.useState([])
 
 function App(){
 
