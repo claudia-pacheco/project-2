@@ -15,6 +15,10 @@ function Home() {
   let [hitDie, updateHitDie] = React.useState(undefined)
   let [raceInfo, updateRaceInfo] = React.useState(undefined)
   let [raceDisplay, updateRaceDisplay] = React.useState(undefined)
+  let [skillInfo, updateSkillInfo] = React.useState(undefined)
+  let [skillDisplay, updateSkillDisplay] = React.useState(undefined)
+
+
 
   // let [userFav, updateUserFav] = React.useState()
 
@@ -57,9 +61,13 @@ function Home() {
     const respFive = await fetch(`https://www.dnd5eapi.co/api/races/${randomRace.index}`)
     const raceInfo = await respFive.json()
     updateRaceInfo(raceInfo)
-
   }
-  console.log('this is race info', raceInfo)
+  async function fetchSkillInfo(randomSkill) {
+    const respSix = await fetch(`https://www.dnd5eapi.co/api/skills/${randomSkill.index}`)
+    const skillInfo = await respSix.json()
+    updateSkillInfo(skillInfo)
+  }
+
   //GENERATING A RANDOM CHARACTER WITH RANDOM CLASS, RACE & SKILL
   function generateCharacter() {
     randomClass = classes.results[Math.floor(Math.random() * classes.results.length)]
@@ -71,6 +79,7 @@ function Home() {
     updateRandomRace(randomRace)
 
     randomSkill = skills.results[Math.floor(Math.random() * skills.results.length)]
+    fetchSkillInfo(randomSkill)
     updateRandomSkill(randomSkill)
   }
 
@@ -89,7 +98,7 @@ function Home() {
     }
     hitDie = classInfo.hit_die
   }
-  //TOGGLE CLASS DISPLAY BUTTON
+  //TOGGLE DISPLAY BUTTONS
   function hitDieDisplay() {
     hitDie = !hitDie
     updateHitDie(hitDie)
@@ -98,8 +107,11 @@ function Home() {
     raceDisplay = !raceDisplay
     updateRaceDisplay(raceDisplay)
   }
-  console.log('6 this is a character random race', randomRace)
-  // console.log('this is a character random skill', randomSkill)
+  function skillInfoDisplay() {
+    skillDisplay = !skillDisplay
+    updateSkillDisplay(skillDisplay)
+  }
+
   return (
     <>
       <div className='headings'>
@@ -133,7 +145,8 @@ function Home() {
       {randomRace && <div><p>You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
         the skills <b>{randomSkill.name}</b>.</p>
         <button onClick={hitDieDisplay}>Click to know more about your class</button>
-        <button onClick={raceInfoDisplay}>Click to know more about your race</button></div>}
+        <button onClick={raceInfoDisplay}>Click to know more about your race</button>
+        <button onClick={skillInfoDisplay}>Click to know more about your skill</button></div>}
 
       {/* CLASSES INFORMATION */}
       {hitDie && <p><h3>More about the {randomClass.name} class.</h3>
@@ -146,7 +159,7 @@ function Home() {
           This determines how difficult they are to kill.</p>
       </p>}
       {/* RACES INFORMATION */}
-      {raceDisplay && <p><h3>More about the {randomRace.name}</h3>
+      {raceDisplay && <p><h3>More about the {randomRace.name} race.</h3>
         <br /><br />
         <b>Age:</b> {raceInfo.age}
         <br /><br />
@@ -157,9 +170,11 @@ function Home() {
         <b>Size:</b> {raceInfo.size_description}
         <br /><br />
         <b>Speed:</b> {raceInfo.speed}
-
       </p>}
-
+      {/* SKILLS INFORMATION */}
+      {skillDisplay && <p><h3>MOre about the {randomSkill.name} skill</h3>
+        <br />
+        <b>{randomSkill.name}: </b>{skillInfo.desc[0]}</p>}
 
 
 
