@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {createContext} from 'react'
 import dragon from '../assets/wp4786826.png'
 import diceImg from '../assets/dice3.png'
+import Races from './Races'
+import Classes from './Classes'
 
 //importing images to display
 import barbarian from '../assets/barbarian.JPG'
@@ -15,7 +17,6 @@ import rogue from '../assets/rogue.JPG'
 import sorcerer from '../assets/sorcerer.JPG'
 import warlock from '../assets/warlock.JPG'
 import wizard from '../assets/wizard.JPG'
-
 
 function Home() {
   const [classes, updateClasses] = React.useState(undefined)
@@ -262,6 +263,10 @@ function Home() {
         <p className='titles'>{randomSkill.name}:</p>{skillInfo.desc[0]}</div>}
     </>
   )
+  
+
+
 }
 
 export default Home
+

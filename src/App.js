@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Home from './Components/Home'
-import Favorites from './Components/Favorites'
+import Races from './Components/Races'
+import Classes from './Components/Classes'
 import Nav from './Components/Nav'
-// const [favourites, updateFavourites] = React.useState([hello])
-// favourites={favourites, updateFavourites}
-// favourites={favourites, updateFavourites}
+
 function App(){
 
     return (
@@ -12,7 +11,8 @@ function App(){
       <Routes>
           <Route path="/" element={<Nav  />} >
             <Route index element={<Home />} />
-            <Route path="/favorites" element={<Favorites  />} />
+            <Route path="/races" element={<Races  />} />
+            <Route path="/classes" element={<Classes />} />
         </Route>
       </Routes>
     </Router>
