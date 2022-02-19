@@ -158,7 +158,14 @@ h2:hover {
 
 p {
   font-family: 'Arima Madurai', cursive;
-  font-size: 18px;
+  font-size: 23px;
+}
+
+.titles {
+color: #631616;
+font-size: 26px;
+  text-transform: uppercase;
+  font-family: pFont;
 }
 
 h4 {
@@ -354,10 +361,10 @@ span {
 }
 
 input {
-  border:2px solid rgba(77, 15, 15, 0.5);
-	font-size:1.75em;
+  border:2px solid rgba(7, 6, 6, 0.5);
+	font-size:1.55em;
 	padding:.25em .5em .3125em;
-	color:rgba(48, 23, 23, 0.5);
+	color:rgba(130, 5, 5, 0.94);
 	background:transparent;
 	transition:all .100s;
 	
