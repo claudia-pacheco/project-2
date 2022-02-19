@@ -21,19 +21,19 @@ function Home() {
   const [races, updateRaces] = React.useState(undefined)
   const [skills, updateSkills] = React.useState(undefined)
   
-  let [name, updateName] = React.useState('')
+  const [name, updateName] = React.useState('')
 
-  let [randomClass, updateRandomClass] = React.useState(undefined)
-  let [randomRace, updateRandomRace] = React.useState(undefined)
-  let [randomSkill, updateRandomSkill] = React.useState(undefined)
-  let [classInfo, updateClassInfo] = React.useState(undefined)
-  let [renderClassInfo, updateRenderClassInfo] = React.useState([])
-  let [hitDie, updateHitDie] = React.useState(undefined)
-  let [raceInfo, updateRaceInfo] = React.useState(undefined)
-  let [raceDisplay, updateRaceDisplay] = React.useState(undefined)
-  let [skillInfo, updateSkillInfo] = React.useState(undefined)
-  let [skillDisplay, updateSkillDisplay] = React.useState(undefined)
-  let [classImg, updateClassImg] = React.useState(undefined)
+  const [randomClass, updateRandomClass] = React.useState(undefined)
+  const [randomRace, updateRandomRace] = React.useState(undefined)
+  const [randomSkill, updateRandomSkill] = React.useState(undefined)
+  const [classInfo, updateClassInfo] = React.useState(undefined)
+  const [renderClassInfo, updateRenderClassInfo] = React.useState([])
+  const [hitDie, updateHitDie] = React.useState(undefined)
+  const [raceInfo, updateRaceInfo] = React.useState(undefined)
+  const [raceDisplay, updateRaceDisplay] = React.useState(undefined)
+  const [skillInfo, updateSkillInfo] = React.useState(undefined)
+  const [skillDisplay, updateSkillDisplay] = React.useState(undefined)
+  const [classImg, updateClassImg] = React.useState(undefined)
 
   React.useEffect(() => {
     //fetching classes 
