@@ -1,5 +1,5 @@
 import React from "react"
-import gnome from '../assets/Gnome-removebg-preview.png'
+import gnome from "../assets/Gnome-removebg-preview.png"
 
 function RacesDisplay() {
    // const [race, updateRace] = React.useState(undefined)
@@ -11,14 +11,14 @@ function RacesDisplay() {
    // }
    // fetchRace()
    return <>
-   <h1>Races </h1>
-   <div>
-       <img src={gnome}></img>
-       {/* <p>{race.name}</p> */}
-   </div>
-  
+      <h1>Races </h1>
+      <div>
+         <img src={gnome}></img>
+         {/* <p>{race.name}</p> */}
+      </div>
+
    </>
-   
+
 }
 
 export default RacesDisplay

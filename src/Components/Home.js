@@ -191,8 +191,8 @@ function Home() {
           In 2004, D&amp;D remained the best-known, <br /> and best-selling, role-playing game in the US,
           with an estimated 20 million people having played the game,<br />
           and more than US$1 billion in book and equipment sales worldwide.<br /> The year 2017 had &quot;the most number of players in its history—12 million to 15 million<br /> in North America alone&quot;.
-          D&amp;D 5th edition sales &quot;were up 41 percent in 2017 from the year before, <br />and soared another 52 percent in 2018, the game's biggest sales year yet&quot;.<br />
-          The game has been supplemented by many pre-made adventures, <br />as well as commercial campaign settings suitable for use by regular gaming groups. <br />D&D is known beyond the game itself for other D&D-branded products, <br />references in popular culture, and some of the controversies that have surrounded it.
+          D&amp;D 5th edition sales &quot;were up 41 percent in 2017 from the year before, <br />and soared another 52 percent in 2018, the game&quot;s biggest sales year yet&quot;.<br />
+          The game has been supplemented by many pre-made adventures, <br />as well as commercial campaign settings suitable for use by regular gaming groups. <br />D&amp;D is known beyond the game itself for other D&amp;D-branded products, <br />references in popular culture, and some of the controversies that have surrounded it.
           <br />The game has won multiple awards and has been translated into many languages.<br /><br />
           <i><b>About this Project:</b></i><br /><br />
           The purpose of this
@@ -234,7 +234,7 @@ function Home() {
       {randomClass && <div> <br /><div className="image-div"><img src={classImg}></img></div>
 
         <p className="user-result"><li>{name}</li> <br />
-          You've been given the race &nbsp;  <b><span>{randomRace.name}</span></b> with the class of &nbsp;  <b><span>{randomClass.name}</span> </b> and
+          You&quot;ve been given the race &nbsp;  <b><span>{randomRace.name}</span></b> with the class of &nbsp;  <b><span>{randomClass.name}</span> </b> and
           the skills &nbsp;  <b><span>{randomSkill.name}</span></b>.</p>
         <div className="info-container">
           <button className="info" onClick={hitDieDisplay}>Expand class</button>
