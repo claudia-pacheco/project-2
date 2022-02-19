@@ -1,8 +1,6 @@
-import React, {createContext} from 'react'
+import React from 'react'
 import dragon from '../assets/wp4786826.png'
 import diceImg from '../assets/dice3.png'
-import Races from './Races'
-import Classes from './Classes'
 
 //importing images to display
 import barbarian from '../assets/barbarian.JPG'
