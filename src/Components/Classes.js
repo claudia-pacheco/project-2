@@ -69,9 +69,9 @@ function ClassesDisplay() {
 
       {classDisplay.length !== 0 ? (
         classDisplay.results.map((elem) => (
-          <div key={elem.index}>
+          <div className="classes-div" key={elem.index}>
             <img src={displayImage(elem)}></img>
-            <p>{elem.name}</p>
+            <p className="classes">{elem.name}</p>
           </div>
         ))
       ) : (
