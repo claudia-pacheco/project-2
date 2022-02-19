@@ -2,11 +2,12 @@ import React from 'react'
 import dragon from '../assets/wp4786826.png'
 import diceImg from '../assets/dice3.png'
 
+
 function Home() {
   const [classes, updateClasses] = React.useState(undefined)
   const [races, updateRaces] = React.useState(undefined)
   const [skills, updateSkills] = React.useState(undefined)
-
+  
   let [name, updateName] = React.useState('')
 
   let [randomClass, updateRandomClass] = React.useState(undefined)
@@ -19,10 +20,6 @@ function Home() {
   let [raceDisplay, updateRaceDisplay] = React.useState(undefined)
   let [skillInfo, updateSkillInfo] = React.useState(undefined)
   let [skillDisplay, updateSkillDisplay] = React.useState(undefined)
-
-
-
-  // let [userFav, updateUserFav] = React.useState()
 
   React.useEffect(() => {
     //fetching classes 
@@ -179,7 +176,9 @@ function Home() {
         </div>
       </div>
       {/* CHARACTER INFORMATION */}
-      {randomClass && <div><p className='user-result'><li>{name}</li> <br />
+      {randomClass && <div><img src={`../assets/${randomClass.index}`} /> 
+
+      <p className='user-result'><li>{name}</li> <br />
         You've been given the race <b>{randomRace.name}</b> with the class of <b>{randomClass.name} </b> and
         the skills <b>{randomSkill.name}</b>.</p>
       <div className='info-container'>
