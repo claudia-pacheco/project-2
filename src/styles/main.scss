@@ -1,3 +1,5 @@
+// i m p o r t s 
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Red+Hat+Mono:wght@300&display=swap');
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
@@ -19,8 +21,18 @@
     src: url(../assets/draconisfont.ttf);
   }
 
+// m e d i a q u e r y 
+
+  @media only screen and (min-width: 1024px) {
+  }
+
+// b a c k g r o u n d c o l o u r 
+
 body {
     background-color: #E6E6DA;
+
+// n a v i g a t i o n 
+
 }
 li {
     list-style: none;
@@ -74,6 +86,8 @@ a:hover {
     flex-direction: column;
 }
 
+// m a i n  s e c t i o n 
+
 h1,
 h2 {
     font-family: mainFont;
@@ -100,16 +114,11 @@ h1:hover {
 
 }
 h2:hover {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
     font-size:85px;
       letter-spacing:0.1em;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 3px;
     text-shadow:  20px 20px #000000;
-    /* transition: .1s; */
 }
 
 .image {
@@ -149,8 +158,27 @@ h2:hover {
 
 p {
   font-family: 'Arima Madurai', cursive;
-  font-size: 18px;
+  font-size: 23px;
 }
+
+.titles {
+color: #631616;
+font-size: 26px;
+  text-transform: uppercase;
+  font-family: pFont;
+}
+
+h4 {
+  font-family: pFont;
+  font-size: 45px;
+  margin-top: 100px;
+  text-align: center;
+  color: #9D0A0E;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+
+}
+
+// i n t e r a c t i v e  s e c t i o n
 
 .user-result {
   text-align: center;
@@ -181,14 +209,11 @@ span {
 
 // B U T T O N S 
 
-// container 
-
 .button-container {
     display: flex;
     justify-content: center;
 }
 
-// generate button 
 
 .dice {
   width: 55px;
@@ -227,8 +252,6 @@ span {
         left: 0px !important;
       }
 
-// button border 
-
 .button-border {
   border:3px solid #333333;
   border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
@@ -243,24 +266,16 @@ span {
   opacity: 0.9;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  // background-size: 100%;
 }
 
 .button-border::hover {
   opacity: 1.0;
 }
 
-// expand for more info buttons 
-
-// container 
-
 .info-container {
   display: flex;
   justify-content: space-evenly;
 }
-
-// buttons
-
 
 .info {
   font-size: 25px;
@@ -334,16 +349,7 @@ span {
   left: 0px !important;
 }
 
-
-h4 {
-  font-family: pFont;
-  font-size: 45px;
-  margin-top: 100px;
-  text-align: center;
-  color: #9D0A0E;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-
-}
+// f o r m 
 
 .form {
   display: flex;
@@ -355,11 +361,10 @@ h4 {
 }
 
 input {
-  border:2px solid rgba(77, 15, 15, 0.5);
-	font-size:1.75em;
+  border:2px solid rgba(7, 6, 6, 0.5);
+	font-size:1.55em;
 	padding:.25em .5em .3125em;
-	color:rgba(48, 23, 23, 0.5);
-	// border-radius:.25em;
+	color:rgba(130, 5, 5, 0.94);
 	background:transparent;
 	transition:all .100s;
 	
@@ -400,8 +405,6 @@ input:focus::-moz-placeholder {
 input:focus:-ms-input-placeholder {
 	opacity:.5;
 }
-
-  
 
 form:placeholder-shown {
   opacity: 0;

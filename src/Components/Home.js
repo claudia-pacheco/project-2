@@ -194,7 +194,7 @@ function Home() {
           and more than US$1 billion in book and equipment sales worldwide.<br /> The year 2017 had "the most number of players in its history—12 million to 15 million<br/> in North America alone".
           D&D 5th edition sales "were up 41 percent in 2017 from the year before, <br/>and soared another 52 percent in 2018, the game's biggest sales year yet".<br/>
           The game has been supplemented by many pre-made adventures, <br/>as well as commercial campaign settings suitable for use by regular gaming groups. <br/>D&D is known beyond the game itself for other D&D-branded products, <br/>references in popular culture, and some of the controversies that have surrounded it.
-          <br/>The game has won multiple awards and has been translated into many languages.<br/>
+          <br/>The game has won multiple awards and has been translated into many languages.<br/><br/>
           <i>About this Project:</i><br/><br/>
           The purpose of this
           project is to help players pick a character using a randomization
@@ -255,15 +255,15 @@ function Home() {
       {/* RACES INFORMATION */}
       {raceDisplay && <p><h4>More about the {randomRace.name} race</h4>
         <br /><br />
-        <b>Age:</b> {raceInfo.age}
-        <br /><br />
-        <b>Alignment:</b> {raceInfo.alignment}
-        <br /><br />
-        <b>Languages:</b> {raceInfo.language_desc}
-        <br /><br />
-        <b>Size:</b> {raceInfo.size_description}
-        <br /><br />
-        <b>Speed:</b> {raceInfo.speed}
+        <p><p className='titles'><b>Age:</b></p>{raceInfo.age}
+          <br /><br />
+          <p className='titles'></p><b>Alignment:</b></p> {raceInfo.alignment}
+          <br /><br />
+          <p className='titles'><b>Languages:</b></p>{raceInfo.language_desc}
+          <br /><br />
+          <p className='titles'><b>Size:</b></p> {raceInfo.size_description}
+          <br /><br />
+          <p className='titles'><b>Speed:</b></p> {raceInfo.speed}
       </p>}
       {/* SKILLS INFORMATION */}
       {skillDisplay && <p><h4>More about the {randomSkill.name} skill</h4>
