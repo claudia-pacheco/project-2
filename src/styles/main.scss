@@ -245,7 +245,7 @@ span {
         font-weight: 200;
         letter-spacing: 1px;
         padding: 13px 50px 13px;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         outline: 0;
         border: 2px solid black;
         cursor: pointer;
@@ -253,6 +253,12 @@ span {
         background-color: rgba(0, 0, 0, 0);
         font-family: buttonFont;
         display: flex;
+        height: 110px;
+        width: 170px;
+        justify-content: flex-end;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
       }
       
       .button-1::after {
