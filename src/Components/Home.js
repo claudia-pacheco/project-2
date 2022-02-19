@@ -292,7 +292,7 @@ function Home() {
           </div>
           <p className="user-result">
             <li>{name}</li> <br />
-            You&quot;ve been given the race &nbsp;{" "}
+            You&apos;ve been given the race &nbsp;{" "}
             <b>
               <span>{randomRace.name}</span>
             </b>{" "}
