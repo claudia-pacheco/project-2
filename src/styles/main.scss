@@ -30,6 +30,7 @@
 
 body {
     background-color: #E6E6DA;
+    padding: 20px;
 
 // n a v i g a t i o n 
 
@@ -37,25 +38,43 @@ body {
 li {
     list-style: none;
     display: inline;
-    padding: 20px;
+    padding: 10px;
     font-family: buttonFont;
   
 }
-
+header{
+  display: flex;
+  position: relative;
+  justify-content: flex-end; 
+  background-image: url("../assets/nav2.jpeg");
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 200px;
+}
+.nav-bar{
+  display: flex;
+  position: relative;
+  justify-content: flex-end; 
+  background-image: url("../assets/logo.png");
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position:100% 0%; 
+  height: 80px;
+  margin-top: 45px;
+  margin-right: 25px;
+}
 ul {
     display: flex;
-    background-image: url("../assets/nav.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 80px;
-    
+    position: relative;
+    margin-top: 80px;
 }
 
-a {
+a {  
     text-decoration: none;
     color: #9D0A0E;
     font-size: 25px;
     display: inline-block;
+    text-shadow: 1px 1px 2px black
 }
 
 
@@ -95,6 +114,7 @@ h2 {
 }
 
 h1 {
+    margin-left: 30px;    
     font-size: 65px;
     margin-bottom: 0px;
 }
@@ -156,9 +176,9 @@ h2:hover {
 
 }
 
-p {
+p , .race-section, .class-section, .skills-section {
   font-family: 'Arima Madurai', cursive;
-  font-size: 23px;
+  // font-size: 23px;
 }
 
 .titles {
