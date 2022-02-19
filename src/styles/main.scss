@@ -2,6 +2,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap');
+
 @font-face {
     font-family: mainFont;
     src: url(../assets/breathefirefont.ttf);
@@ -13,7 +15,7 @@
   }
 
   @font-face {
-    font-family: pFont;
+    font-family: pFont; 
     src: url(../assets/draconisfont.ttf);
   }
 
@@ -25,7 +27,7 @@ li {
     display: inline;
     padding: 20px;
     font-family: buttonFont;
-    
+  
 }
 
 ul {
@@ -34,17 +36,37 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     height: 80px;
+    
 }
 
 a {
     text-decoration: none;
     color: #9D0A0E;
     font-size: 25px;
+    display: inline-block;
+}
+
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
 }
 
 a:hover {
-  transform: scale(0.84);
-  background-color: yellow;
+  animation: bounce 1s;
+
 }
 
 .headings {
@@ -99,7 +121,8 @@ h2:hover {
 
 
 .dragon {
-  width: 450px;
+  width: 600px;
+  height: 500px;
   margin-right: 20px;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -112,11 +135,21 @@ h2:hover {
   filter: grayscale(0);
 }
 
-p {
+.welcome-span {
+  font-family: pFont;
+  font-size: 35px;
+  
+}
+.welcome-p{
     font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    font-weight: 400px;
+    font-size: 17px;
+    font-weight: bolder;
 
+}
+
+p {
+  font-family: 'Arima Madurai', cursive;
+  font-size: 18px;
 }
 
 .user-result {
@@ -131,16 +164,37 @@ p {
 
 h3 {
     font-family: pFont;
-    font-size: 40px;
+    font-size: 45px;
     margin-top: 100px;
     text-align: center;
     color: #9D0A0E;
+    text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    font-weight: bolder;
+    text-decoration-color: #333333;
+
 }
+
+span {
+  text-shadow: 0 0 60px #fff, 0 0 20px #fff, 0 0 30px gold, 0 0 40px #b06389, 0 0 50px gold, 0 0 60px gold, 0 0 70px #b6abb1;
+}
+
+// B U T T O N S 
+
+// container 
 
 .button-container {
     display: flex;
     justify-content: center;
 }
+
+// generate button 
+
+.dice {
+  width: 55px;
+  height: 55px;
+      }
+
 .button-1 {
         font-size: 25px;
         font-weight: 200;
@@ -173,6 +227,8 @@ h3 {
         left: 0px !important;
       }
 
+// button border 
+
 .button-border {
   border:3px solid #333333;
   border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
@@ -193,47 +249,163 @@ h3 {
 .button-border::hover {
   opacity: 1.0;
 }
+
+// expand for more info buttons 
+
+// container 
+
 .info-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
+// buttons
+
+
 .info {
-  width: 200px;
-  // border-radius: 5px;
-  border: .25em solid transparent;
-  border-radius: 1em;
-  padding: .25em;
-  // border: none;
-  height: 90px;
-  font-family: Poppins;
+  font-size: 25px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  margin-bottom: 30px;
+  outline: 0;
+  border: 2px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: buttonFont;
+  display: flex;
+}
+
+.info::after {
+  content: "";
+  background-color: #9D0A0E !important;
+  width: 100% !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  height: 100% !important;
+  top: 7px !important;
+  left: 7px !important;
+  transition: 0.2s !important;
+  opacity: 0.9;
+}
+
+.info:hover::after {
+  top: 0px !important;
+  left: 0px !important;
+  opacity: 1;
+}
+
+.favorites-container {
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+}
+
+.favorites {
+  font-size: 25px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  margin-bottom: 30px;
+  outline: 0;
+  border: 2px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: pFont;
   text-transform: uppercase;
-  font-size: large;
-  color: #E6E6DA;
-  letter-spacing: 2px;
-  background-color: #9D0A0E;
-  // background-image: black;
-  background-image: -moz-linear-gradient(top, #a53b3e  0%, #9D0A0E 100%); 
-  background-image: -webkit-linear-gradient(top, #9D0A0E   0%,#9D0A0E 100%); 
-  background-image: linear-gradient(to bottom, rgb(23, 12, 12)  0%,#9D0A0E 100%); 
-  background-size: 300px;
-  background-repeat: no-repeat;
-  background-position: 0%;
-  -webkit-transition: background 300ms ease-in-out;
-  transition: background 300ms ease-in-out;
+}
+
+.favorites::after {
+  content: "";
+  background-color: #ae252a;
+  width: 100% !important;
+  z-index: -1 !important;
+  position: absolute !important;
+  height: 100% !important;
+  top: 7px !important;
+  left: 7px !important;
+  transition: 0.2s !important;
+}
+
+.favorites:hover::after {
+  top: 0px !important;
+  left: 0px !important;
+}
+
+
+h4 {
+  font-family: pFont;
+  font-size: 45px;
+  margin-top: 100px;
+  text-align: center;
+  color: #9D0A0E;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+
+}
+
+.form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+input {
+  border:2px solid rgba(77, 15, 15, 0.5);
+	font-size:1.75em;
+	padding:.25em .5em .3125em;
+	color:rgba(48, 23, 23, 0.5);
+	// border-radius:.25em;
+	background:transparent;
+	transition:all .100s;
+	
+	&:focus{
+		outline:none;
+		color:rgba(21, 9, 9, 0.75);
+		border-color:rgba(218, 211, 211, 0.75);
+	}
+
+  font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+}
+
+$placeholder-color:rgba(113, 4, 4, 0.5);
+
+::-webkit-input-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus::-webkit-input-placeholder {
+	opacity:.7;
+}
+
+::-moz-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus::-moz-placeholder {
+	opacity:.5;
+}
+
+:-ms-input-placeholder {
+	color:$placeholder-color;
+	text-shadow:0 0 .125em transparent;
+	transition:all .25s;
+}
+input:focus:-ms-input-placeholder {
+	opacity:.5;
+}
+
   
-      }
-        .info:hover {
-          background-position: -200%;
-          transition: background 300ms ease-in-out;
-          cursor: pointer;
-        }
 
-.dice {
-  width: 55px;
-  height: 55px;
-      }
-
-.hello {
-  background-color: black;
+form:placeholder-shown {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(-4rem);
+  transform: translateY(-4rem);
 }
