@@ -65,7 +65,7 @@ The main challenge during this project was definitely working with the API. We h
 
 ## Key Learnings
 
-We learned the most about how to work effectively in a team as this was our first pair-programming project. We combined both of our strengths and used it to our own benefit so we could achieve the best possible results. As we both compliment each other, our weaknesses were balanced by one another.
+We learnt the most about how to work effectively in a team as this was our first pair-programming project. We combined both of our strengths and used it to our own benefit so we could achieve the best possible results. As we both compliment each other, our weaknesses were balanced by one another.
 
 We also learnt a lot on how to work with different endpoints and still successfully fetch data through DRY code. Initially we were a bit hesitant with our API but going through the project I am very happy we kept working with it and didn't get discouraged. This helped us massively to prepare for future projects where data fetching isn't always black and white.
 
