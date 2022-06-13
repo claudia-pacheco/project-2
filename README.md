@@ -2,7 +2,7 @@
 
 Deployed [here](https://dungeons-n-dragons.netlify.app/)
 
-This is my second project for the General Assembly Software Engineering Immersive course. This Reactathon app consumes a public API and has includes a router with several pages.
+This is my second project for the General Assembly Software Engineering Immersive course. This Reactathon app consumes a public API and includes a router with several pages.
 
 
 ### Table of contents 
