@@ -2,9 +2,7 @@
 
 Deployed [here](https://dungeons-n-dragons.netlify.app/)
 
-This project was built for project two of General Assembly's Full-Stack Software Engineering course. 
-The project brief's focus was on utilising our knowledge of React as well as fetching and using data from selected API's. 
-This project is a paired project. 
+This is my second project for the General Assembly Software Engineering Immersive course. This Reactathon app consumes a public API and has includes a router with several pages.
 
 
 ### Table of contents 
@@ -14,104 +12,65 @@ This project is a paired project.
 3. Build
 4. Styling
 5. Challenges and Wins
-6. Future improvements
+6. Key Learnings
+7. Future improvements
+
+## Tech Stack
+
+React, HTML, CSS, React RouterDOM, public API.
 
 #### How it works
 
-The Dungeons & Dragons Character Builder is a generator that fetches random data from an API and displays it to the user. The random data returned is race, class and skill.
-It also fetches the description of the randomised data if the user wishes to see it. (Description of returned race, class and skill,
-including the languages spoken by the race and their aging attributes)
-The purpose of the generator is for player's to have a random character generated for them to play the game.
-The player's can randomise their character as many times as they wish. 
+The Dungeons & Dragons Character Builder generates a random character for users. The race, class and skills are randomly feched from the public API we used. It also fetches and displays further information about all 3 if the users wishes to know more.
 
 #### Planning
 
-We were given the task to find and play around with a list of avaliable API's and others we could find online. 
-We first tested the API's using Insomnia and the D&D API documentation (https://www.dnd5eapi.co/).
-Once agreed on what the project would do and display, we started to experiment with creating wireframes.
+We started off by selecting a concept and API we would like to work with. We tested our chosen API through Imsomnia and the [D&D API documentation](https://www.dnd5eapi.co/).
+Once we were happy with the theme and results, we started to create a wireframe.
 
 ![planning screenshot](/src/assets/psuedo.png)
 
-We also kept track of the things we had to do for each day.
+We also kept track of the things we had to do for each day and met up regularly on Zoom. 
 
 ![planning screenshot](/src/assets/psuedo2.png)
 
 #### Build
 
-The project utilises React, HTML and SCSS. We started by testing the API's behaviour using <font color="blue">**console.logs**</font> and using the 
-terminal in the Chrome browser to see how we could access different data points. Then we fetched the data within our code.
+The project utilises React, HTML and SCSS. We started off by testing the API's behaviour using Insomnia and `console.log` to see how we could access different end points. This was proved rather difficult as the API wasn't always straight forward. 
+When we fetched, say for instance, classes, we would be presented with a list of all the classes available and under each one, another endpoint to know more. This meant we had to generate another fetch request should we wish to have more information.
 
-```
-async function fetchClassInfo(randomClass) {
-    const respFour = await fetch(`https://www.dnd5eapi.co/api/classes/${randomClass.index}`)
-    const classInfo = await respFour.json()
-    updateClassInfo(classInfo)
-    displayClassInfoFunction(classInfo)
-    hitDieDisplay(classInfo)
-  }
-  //fetching individual race information
-  async function fetchRaceInfo(randomRace) {
-    const respFive = await fetch(`https://www.dnd5eapi.co/api/races/${randomRace.index}`)
-    const raceInfo = await respFive.json()
-    updateRaceInfo(raceInfo)
-  }
-  async function fetchSkillInfo(randomSkill) {
-    const respSix = await fetch(`https://www.dnd5eapi.co/api/skills/${randomSkill.index}`)
-    const skillInfo = await respSix.json()
-    updateSkillInfo(skillInfo)
-  }
-```
+<img width="447" alt="Screenshot 2022-06-13 at 10 52 31" src="https://user-images.githubusercontent.com/94257616/173328456-12a799c7-25a8-49de-8ac3-143fa5a48e3c.png">
+<img width="447" alt="Screenshot 2022-06-13 at 10 53 01" src="https://user-images.githubusercontent.com/94257616/173328514-495915c7-2d08-44a9-b2c5-1faa81301072.png">
 
-Our next step was to be able to return a random character, which we tackled by using the <font color="blue">**Math.random()**</font> function. 
+So for the user to see more about the random class they got attributed, we had to create another fetch with that specific `randomClass` this way the information displayed would be accurate and not random again.
 
-```
-  function generateCharacter() {
-    randomClass = classes.results[Math.floor(Math.random() * classes.results.length)]
-    fetchClassInfo(randomClass)
-    displayingClassImg(randomClass)
-    updateRandomClass(randomClass)
+Another method we used to generate the random character and to choose from the different options within the array was the `Math.random` function.
 
-    randomRace = races.results[Math.floor(Math.random() * races.results.length)]
-    fetchRaceInfo(randomRace)
-    updateRandomRace(randomRace)
+<img width="463" alt="Screenshot 2022-06-13 at 10 56 47" src="https://user-images.githubusercontent.com/94257616/173329154-1b6289e9-087d-43e8-9a5b-25789acf18dc.png">
 
-    randomSkill = skills.results[Math.floor(Math.random() * skills.results.length)]
-    fetchSkillInfo(randomSkill)
-    updateRandomSkill(randomSkill)
-  }
-  }
-```
+Once we had our results for each category stored in a variable, we used the `Math.floor(Math.random() * VARIABLE.length` method to generate a random option only within the array length.
 
-The main logic in this project is wihin our generator which is the code we exanded above.  
 
 #### Styling
 
-We wanted the styling to reflect classic D&D characteristcs and aesthetics but still have a modern feel. 
-We added extra styling functionality like hover effects to give the project more character. 
-We used different art styles such as AI created digital art as well as classic drawings.
-We also used classic D&D iconography such as the D20 infamous dice.
-
-
+We wanted the styling to reflect classic D&D characteristcs and aesthetics but still have a modern feel. Although I didn't concentrate too much on the styling as I did on the logic, I helped out my colleague choosing images to use as or `Races` and `Classes` and also styling the nav bar. I found a good quality background and logo and shifted the items to the right of the screen. 
+My colleague then added some really cool hover effects and animations. This was also implemented throughout the project. 
 
 ![planning screenshot](/src/assets/stylescreen.png)
-![dice](/src/assets/dice3.png)
+
 
 #### Challenges and Wins
 
-A few challenges appeared during the building of this project. But with every challenge there was a win. The biggest challenge 
-was getting the favorites functionality to work. We discovered that there are many ways to do it and the simplest way would
-come with a lot of caveats, such as losing the data from each pay when clicked onto a new page. The biggest challenge that we
-faced was during the deployment stage, we discovered that we had to fix a number of bugs for it to be successfuly deployed online,
-that we would not have known until the deployment stage. 
+The main challenge during this project was definitely working with the API. We had to think how to tackle the different endpoints without having to create individual fetch requests. Our first approach was that we simply couldn't create so many fetch requests for essentially the same request with only one different variable. This then led us to we eventually come to the conclusion we could use string concatenation for the variable to make the code DRY and easier.
+
 
 #### Future improvememts 
 
-Originally we had planned to have a Favorites page for the user's to save up to four character's. (4 character's plus the Dungeon Master). Another option would be to have an infinite amount of favorites for the player's to potentially round up their 
-favorite generated character's and choose. The addition of favorites would have been a relevant feature to our project as it would emphasise the concept of generating a character for the user to potentially play with in a campaign. The player's would be able to see their favorite's in the favorite's page as well as which user favorited it. We would also have the option to expand details
-of the class, race and skills so that it is not lost in the home-page. 
-In terms of styling, having the expansions more concise and in clear sections would be the finishing touch. 
+Areas to improve:
 
+- Add a favourites section where users can save their favourite characters (up to four)
+- Expansion details more concise and clear sections
 
+Bugs to fix:
 
-
-
+- Close the current expanded section before expanding the next one.
