@@ -21,7 +21,7 @@ React, HTML, CSS, React RouterDOM, public API.
 
 ## How it works
 
-The Dungeons & Dragons Character Builder generates a random character for users. The race, class and skills are randomly fetched from the public API we used. It also fetches and displays further information about all 3 if the users wishes to know more.
+The Dungeons & Dragons Character Builder generates a random character for users. The race, class and skills are randomly fetched from the public API we used. It also fetches and displays further information about all 3 if the user wishes to know more.
 
 ## Planning
 
@@ -51,7 +51,7 @@ Another method we used to generate the random character and to choose from the d
 Once we had our results for each category stored in a variable, we used the `Math.floor(Math.random() * VARIABLE.length` method to generate a random option only within the array length.
 
 
-## Styling
+#### Styling
 
 We wanted the styling to reflect classic D&D characteristics and aesthetics but still have a modern feel. Although I didn't concentrate too much on the styling as I did on the logic, I helped out my colleague to choose images to use as our `Races` and `Classes` and also styling the nav bar. I found a good quality background and logo and shifted the items to the right of the screen. 
 My colleague then added some really cool hover effects and animations. This was also implemented throughout the project. 
@@ -61,11 +61,11 @@ My colleague then added some really cool hover effects and animations. This was 
 
 ## Challenges and Wins
 
-The main challenge during this project was definitely working with the API. We had to think how to tackle the different endpoints without having to create individual fetch requests. Our first approach was that we simply couldn't create so many fetch requests for essentially the same request with only one different variable. This then led us to eventually come to the conclusion we could use string concatenation for the variable to make the code DRY and easier.
+The main challenge during this project was definitely working with the API. We had to think about how to tackle the different endpoints without having to create individual fetch requests. Our first approach was that we simply couldn't create so many fetch requests for essentially the same request with only one different variable. This then led us to eventually come to the conclusion we could use string concatenation for the variable to make the code DRY and easier.
 
 ## Key Learnings
 
-We learnt the most about how to work effectively in a team as this was our first pair-programming project. We combined both of our strengths and used it to our own benefit so we could achieve the best possible results. As we both compliment each other, our weaknesses were balanced by one another.
+We learned the most about how to work effectively in a team as this was our first pair-programming project. We combined both of our strengths and used it to our own benefit so we could achieve the best possible results. As we both complimented each other, our weaknesses were balanced by one another.
 
 We also learnt a lot on how to work with different endpoints and still successfully fetch data through DRY code. Initially we were a bit hesitant with our API but going through the project I am very happy we kept working with it and didn't get discouraged. This helped us massively to prepare for future projects where data fetching isn't always black and white.
 
